@@ -14,14 +14,17 @@ def get_indices_of_item_weights(weights, length, limit):
     # Initialize a python dictionary as hashtable
     hash_table = dict()
     # move through the list elements (taking the element and the element's index)
-    for ele in weights
-    # for every element, add the element to the empty dictionary as a key
-    # and add the index of the same element as the value
+    for index, ele in enumerate(weights):
+        # for every element, add the element to the empty dictionary as a key
+        # and add the index of the same element as the value
+        hash_table[ele] = index
+        print(hash_table)
+
     # Check to see if the dict contains a key entry for the equation `limit - weight`, where limit is the `limit` and weight is the `list element.
     # If it does, return a tuple of both element's index
     # (high_index, low_index)
 
-    return weights
+    return None
 
 
 # A package has a weight limit
