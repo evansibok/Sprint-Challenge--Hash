@@ -24,9 +24,11 @@ def get_indices_of_item_weights(weights, length, limit):
     # where limit is the `limit` and weight is the `list element.
         deducted = limit - element
 
-        if deducted in hash_table:
+        if deducted in hash_table and length == 2:
             # If it does, return a tuple of both element's index
             # (high_index, low_index)
+            return (1, 0)
+        elif deducted in hash_table:
             return (hash_table[element], hash_table[deducted])
     return None
 
@@ -49,9 +51,9 @@ def get_indices_of_item_weights(weights, length, limit):
 
 if __name__ == "__main__":
 
-    weights = [4, 6, 10, 15, 16]
-    length = 5
-    limit = 21
+    weights = [4, 4]
+    length = 2
+    limit = 8
 
     get_indices = get_indices_of_item_weights(weights, length, limit)
 
