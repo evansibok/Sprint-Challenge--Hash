@@ -62,6 +62,7 @@ def reconstruct_trip(tickets, length):
         # Add next destination to route
         route.append(destination)
         # move through the destination to get next source
+        # next source should be previous destination
         source = destination
 
     return route
