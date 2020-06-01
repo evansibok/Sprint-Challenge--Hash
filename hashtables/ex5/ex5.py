@@ -6,17 +6,18 @@ def finder(files, queries):
     # where keys are file path strings
     # and values are the queries
     query_table = {}
-    # Get the query to reconcile from the file path strings
-
     for file in files:
+        # Get the query to reconcile from the file path strings
         query = file.split('/')
         query_table[file] = query[-1]
 
+    result = []
     for query in queries:
-        print('query', query)
+        for key, value in query_table.items():
+            if value == query:
+                result.append(key)
 
-    # return result
-    return query_table
+    return result
 
 
 if __name__ == "__main__":
